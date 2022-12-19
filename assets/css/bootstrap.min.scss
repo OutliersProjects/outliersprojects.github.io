@@ -3828,7 +3828,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
  }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active {
-     color: #495057;
+     color: red;
      background-color: #fff;
      border-color: #dee2e6 #dee2e6 #fff;
  }
@@ -3844,7 +3844,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
  }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-     color: #fff;
+     color: red;
      background-color: #007bff;
  }
 
@@ -4230,7 +4230,7 @@ navbar-toggler-shrink{
  }
 
 .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link {
-     color: #fff;
+     color: red;
  }
 
 .navbar-dark .navbar-toggler {

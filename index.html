@@ -47,7 +47,7 @@
 
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#introduction">Introduction</a></li>
 
-          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#datastory">Datastory</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#data-story">Datastory</a></li>
 
           <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#team">Team</a></li>
 
@@ -88,7 +88,6 @@
     <div class="row">
       <div class="col-lg-12 text-center">
         <h2 class="section-heading text-uppercase">Introduction</h2>
-        <h3 class="section-subheading text-muted">our story</h3>
       </div>
     </div>
     <div class="row">
@@ -96,11 +95,105 @@
         <div class="large text-dark">
             <p>
             American electoral politics have been dominated by two major political parties: the Democratic Party and the Republican Party. While democrats are liberal and left-leaning, republicans adopted a conservative right-leaning ideology. Each year, the world watches how these two powerful parties dispute power and picks sides. In this context, does Youtube have a political orientation? Is youtube strictly politically unbiased or does it have its own preferences?
+            </p>
 
-In this article, we explore the prevalence of videos on YouTube that align with different political spectrums. We analyze the content and messages of these videos, as well as the ways in which they are promoted and recommended to users. We also consider the impact that these videos may have on public discourse and the formation of political beliefs. Through this analysis, we aim to shed light on the role that YouTube plays in shaping political views and the potential for bias on the platform.
+            <p>
+            In this article, we explore the prevalence of videos on YouTube that align with different political spectrums. We analyze the content and messages of these videos, as well as the ways in which they are promoted and recommended to users. We also consider the impact that these videos may have on public discourse and the formation of political beliefs. Through this analysis, we aim to shed light on the role that YouTube plays in shaping political views and the potential for bias on the platform.
+            </p>
+        </div>
+        <!--Why is it important?-->
+        <h3 class="section-subheading">Why is it important?</h3>
+
+        <div class="large text-dark">
+            <p>
+            (Some results of analysis that youtube growths in popularity over the years)
+            <a href="https://www.theregister.com/2022/10/18/youtube_algorithm_conservative_content/">link1</a>
+            <a href="https://en.wikipedia.org/wiki/Social_impact_of_YouTube" >link2</a>
+            <a href="https://dspace.spbu.ru/bitstream/11701/32796/1/225-240.pdf">link3</a>
+            </p>
+        </div>
+
+        <!--Research questions-->
+        <h3 class="section-subheading">Research questions</h3>
+
+
+        <div class="large text-dark">
+            <p>
+            Our research aims to find the answer to a series of question that would help us understand the political polarization of Youtube:
+            </p>
+            <ul>
+            <li>Is YouTube strictly politically unbiased or does it have its own preferences?</li>
+            <li>Do democrats and republicans live in partisan bubbles or is there any conversation between the two sides?</li>
+            <li>Is it a bad thing for a channel to change the direction of the videos that they are producing? Does this affects the overall engagement?</li>
+            <li>Do we see an engagement in comments from both political spectrums, or people prefer not to engage in "comment battles" with each other?</li>
+            </ul>
+
+        </div>
+
+
+        <!--How do we answer these questions?-->
+        <h3 class="section-subheading">How do we answer these questions?</h3>
+
+        <div class="large text-dark">
+            <p>
+            Thanks to YouNiverse ([link to paper and girhub repo]) dataset, we are able to analyze youtube content throughout the years.    Thanks to the rich database of 72.9 millions videos, 136 k channels  and 8.6 B comment metadata we perform a deep dive into the topic.
 
             </p>
         </div>
+
+        <!--How do we assign a video to polytical spectrum?-->
+        <h3 class="section-subheading">How do we assign a video to polytical spectrum?</h3>
+
+        <div class="large text-dark">
+            <p>
+            For political affiliation labelling we trained our political-flavoured BERT model on <a href='https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets'>Democrat Vs. Republican Tweets</a>. We again particularly used this dataset because we wanted our model to understand how people are expressing political ideas on social platforms.
+
+            </p>
+        </div>
+
+        <!--How we do label videos with sentimental label?-->
+        <h3 class="section-subheading">How we do label videos with sentimental label?</h3>
+
+        <div class="large text-dark">
+            <p>
+            We try to understand if one political affiliation is more prevalent than the other and also correlated with a higher engagement rate. We perform our analysis over time to see whether or not these trends are changing and if they reflect the US political reality. In order to  deepen our understanding about the political phenomenom, we use a sentiment analysis model to label the sentiment of a video, based again on text description and title. Our analysis is performed at video granularity and also channel granularity.
+        </p>
+        <p>
+            In order to correctly label the setiment of each video we trained our political-flavoured BERT model on <a href='https://www.kaggle.com/datasets/cosmos98/twitter-and-reddit-sentimental-analysis-dataset'>Twitter and Reddit Sentimental analysis Dataset</a>. We particularly used this dataset since we wanted to capture how people are talking on social platforms.
+
+            </p>
+        </div>
+
+
+
+        <!--Which videos we care about?-->
+        <h3 class="section-subheading">Which videos we care about?</h3>
+
+        <div class="large text-dark">
+            <p>
+            Youtube is a social media platform with over 72.9 million videos.
+            </p>
+
+            (pie plot of ratio of videos category in each category)
+
+            In order to analyze YouTube with regard to political spectrum we perform a filtering for videos that we care about.
+            <p>
+            We are keeping only videos that:
+
+            are from cateogry: News & Politics
+            are from channels that have category News & Politics
+            youtub videos from country US [reflink to additional dataset]
+            Since the discussion is relevant for the US population, we chose to only consider channels from US. In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id.
+
+            We found some inconsistencies among the categories for each channel, so we decided to retrieve this information from Youtube API. We filtred only channels from 'Politics' and 'Society', but our further analysis could focus on multiple categories.
+
+            </p>
+        </div>
+
+
+
+
+
       </div>
     </div>
   </div>
@@ -108,7 +201,31 @@ In this article, we explore the prevalence of videos on YouTube that align with 
 <!-- End Introduction -->
 
 
-<!-- Portfolio Grid -->
+
+
+<!-- ATA ANALYSIS -->
+<section class="bg-light page-section" id="data-story">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading text-uppercase">Data Story</h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-left">
+<!--        CONTENT START-->
+
+
+
+<!--        CONTENT END-->
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End DATA ANALYSIS -->
+
+<!-- Portfolio Grid
 <section class="bg-light page-section" id="portfolio">
   <div class="container">
     <div class="row">
@@ -214,7 +331,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
     </div>
   </div>
 </section>
-<!-- Portfolio Modals -->
+Portfolio Modals
 
 <div
   class="portfolio-modal modal fade"
@@ -234,7 +351,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              // Project Details Go Here
               <h2 class="text-uppercase">Project Threads</h2>
               <p class="item-intro text-muted">subtitle lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -285,7 +402,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              //Project Details Go Here
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -336,7 +453,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              //Project Details Go Here
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -387,7 +504,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              //Project Details Go Here
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-dark">Lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -438,7 +555,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+              // Project Details Go Here
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -489,7 +606,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="row">
           <div class="col-lg-8 mx-auto">
             <div class="modal-body">
-              <!-- Project Details Go Here -->
+             //Project Details Go Here
               <h2 class="text-uppercase">Project Name</h2>
               <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
               <img
@@ -522,8 +639,7 @@ In this article, we explore the prevalence of videos on YouTube that align with 
   </div>
 </div>
 
-<!-- End Portfolio Modals -->
-
+End Portfolio Modals -->
 
 <!-- About -->
   <section class="bg-light page-section" id="introduction">
@@ -532,16 +648,15 @@ In this article, we explore the prevalence of videos on YouTube that align with 
         <div class="col-lg-12 text-center">
           <h2 class="section-heading text-uppercase">
 </h2>
-heee
-          <h3 class="section-subheading text-muted">timeline</h3>
-          sdsad
+
+          <h3 class="section-subheading text-muted"></h3>
+
         </div>
       </div>
       <div class="row">
         <div class="col-lg-12">
           <ul class="timeline">
 
-dasdasdas
 
           </ul>
         </div>
