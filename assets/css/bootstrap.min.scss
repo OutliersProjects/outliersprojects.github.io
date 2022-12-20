@@ -9023,6 +9023,20 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
      text-align: center !important;
  }
 
+div.image{
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+div.image img{
+    padding-right:40px;
+    padding-left:40px;
+}
+
+img {
+    text-align:center;
+}
+
 @media (min-width: 576px) {
      .text-sm-left {
          text-align: left !important;

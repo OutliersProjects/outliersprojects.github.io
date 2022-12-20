@@ -94,24 +94,31 @@
       <div class="col-lg-10 mx-auto text-left">
         <div class="large text-dark">
             <p>
-            American electoral politics have been dominated by two major political parties: the Democratic Party and the Republican Party. While democrats are liberal and left-leaning, republicans adopted a conservative right-leaning ideology. Each year, the world watches how these two powerful parties dispute power and picks sides. In this context, does Youtube have a political orientation? Is youtube strictly politically unbiased or does it have its own preferences?
+            American electoral politics have been dominated by two major political parties: the Democratic Party and the Republican Party. While democrats are liberal and left-leaning, republicans adopted a conservative right-leaning ideology. Each year, the world watches how these two powerful parties dispute power and pick sides. In this context, does Youtube have a political orientation? Is youtube strictly politically unbiased or does it have its own preferences?
             </p>
 
             <p>
-            In this article, we explore the prevalence of videos on YouTube that align with different political spectrums. We analyze the content and messages of these videos, as well as the ways in which they are promoted and recommended to users. We also consider the impact that these videos may have on public discourse and the formation of political beliefs. Through this analysis, we aim to shed light on the role that YouTube plays in shaping political views and the potential for bias on the platform.
+            In this article, we explore the prevalence of videos on YouTube that align with different political spectrums. We analyze the content and messages of these videos, as well as their popularity during the major events on the US politics scene. Through this analysis, we aim to shed light on the role that YouTube plays in shaping political views and the potential for bias on the platform.
             </p>
         </div>
         <!--Why is it important?-->
         <h3 class="section-subheading">Why is it important?</h3>
 
         <div class="large text-dark">
-            <p>
-            (Some results of analysis that youtube growths in popularity over the years)
-            <a href="https://www.theregister.com/2022/10/18/youtube_algorithm_conservative_content/">link1</a>
-            <a href="https://en.wikipedia.org/wiki/Social_impact_of_YouTube" >link2</a>
-            <a href="https://dspace.spbu.ru/bitstream/11701/32796/1/225-240.pdf">link3</a>
+      <p>
+            YouTube is the world's largest video hosting service. In the recent years, Youtube audience grew more than 10 times: from 200 millions in 2010 to 2.5 billions in 2021. Such platform with a large user base has the potential to shape public discourse and influence the way people think about certain issues. If it is perceived as biased, it may only amplify certain viewpoints and silence others, leading to a distorted public discourse. Political bias can contribute to the polarization of society, as people are exposed to more one-sided views and may be less likely to engage with viewpoints that differ from their own. Overall, it is important for platforms like YouTube to remain neutral and unbiased in order to maintain the trust and support of their users and avoid legal and reputational risks.
             </p>
-        </div>
+            <div class="col-lg-12 text-center image">
+                <img alt='social_media' class="text-center" src="assets/img/introduction/social_media.jpeg" width="45%"/>
+            <img alt='quarterly_users' class="text-center" src="assets/img/introduction/quarterly_users.jpeg" width="45%"/>
+            </div>
+
+            <p>
+                YouTube is a popular and widely used platform with a significant user base. In 2021, YouTube had over 2 billion logged-in users per month<a href="#reference-1" class="js-scroll-trigger"><sup class="reference">[1]</sup></a>, making it one of the most visited websites in the world. In addition, the platform had over 1 billion hours of content watched per day<a href="#reference-2" class="js-scroll-trigger"><sup class="reference">[2]</sup></a> and was available in over 100 countries and in 80 languages. These statistics suggest that YouTube was a highly popular and influential platform at the time of my knowledge cutoff. It is possible that YouTube's popularity and user base have continued to grow since then.
+
+            </p>
+
+    </div>
 
         <!--Research questions-->
         <h3 class="section-subheading">Research questions</h3>
@@ -188,6 +195,12 @@
             We found some inconsistencies among the categories for each channel, so we decided to retrieve this information from Youtube API. We filtred only channels from 'Politics' and 'Society', but our further analysis could focus on multiple categories.
 
             </p>
+            <p>
+            Since the discussion is relevant for the US population, we chose to only consider channels from US. In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id.
+
+We found some inconsistencies among the categories for each channel, so we decided to retrieve this information form Youtube API. We filtred only channels from 'Politics' and 'Society', but our further analysis could focus on multiple categories.
+
+            </p>
         </div>
 
 
@@ -203,18 +216,80 @@
 
 
 
-<!-- ATA ANALYSIS -->
+<!-- DATA ANALYSIS -->
 <section class="bg-light page-section" id="data-story">
   <div class="container">
     <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2 class="section-heading text-uppercase">Data Story</h2>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-10 mx-auto text-left">
+      <div class="col-lg-10 mx-auto">
 <!--        CONTENT START-->
 
+<!-- FIRST - FIRST -FIRST -FIRST -FIRST -FIRST -FIRST -FIRST -FIRST -FIRST -->
+
+        <h3 class="section-subheading text-lg-center">Is YouTube strictly politically unbiased or does it have its own preferences?</h3>
+
+        <div class="large text-dark">
+
+        <p class="text-left">
+        To investigate this, we tried to understand the distribution of republican and democratic content. We performed our analysis on video level and aggregated the results by month, in order to understand the trend revolution.
+        </p>
+        <div class="text-center image">
+                <img alt='social_media' src="assets/img/datastory/1/evolution_upload_density.png" width="85%"/>
+        </div>
+
+        <p>
+        We can see that there is a clear tendency towards more republican content posted each month.
+        </p>
+
+        <p>
+However, in terms of reach, the results are surprising. Democratic content is able to gather definitely more engagement after Trump announces his candidancy for US president elections in June 2015.
+
+        </p>
+
+
+       <div class="text-center image">
+                <img alt='social_media' src="assets/img/datastory/1/timeseries_likes.png" width="85%"/>
+                <img alt='social_media' src="assets/img/datastory/1/timeseries_dislikes.png" width="85%"/>
+       </div>
+
+        </div>
+
+
+<!-- SECOND - SECOND - SECOND - SECOND - SECOND - SECOND - SECOND - SECOND -->
+
+        <h3 class="section-subheading text-lg-center">Do democrats and republicans live in partisan bubbles or is there any conversation between the two sides?</h3>
+
+        <div class="large text-dark">
+
+        <p class="text-left">
+        For this, we want to see how users interract. Do they only comment on a single type of video, or do they try to have a conversation with the other party? Are democrats more likely to comment to republicans videos? We can inpher if a user is republican or democrat by analysing the majority of the videos he/she commented on.
+        </p>
+
+        <p class="text-left">
+        We can also try to cluster videos based on similiar topic and user engagement. We would connect the videos that were commented by the same user with a weight that would depend on whether or not the video was published by the same channel and the number of common commenters for both videos. In this way, we can see wheter or not videos form a community of similiar topics and engagement using community detection algorithms.
+        </p>
+
+        <div class="text-center image">
+
+        </div>
+
+        </div>
+
+<!-- THIRD - THIRD - THIRD - THIRD - THIRD - THIRD - THIRD - THIRD -->
+
+        <h3 class="section-subheading text-lg-center">Is it a bad thing for a channel to change the direction of the videos that they are producing? Does this affect the overall engagement?</h3>
+
+        <div class="large text-dark">
+
+        <p class="text-left">
+        In order to answer this question, we will use the channel timeseries to retrieve the information about a channel at a given point in time. We will match channels that have the same number of subscribers at a certain point in time and have the last 4 videos with the same political scores and sentiment scores. After matching, we can more reliably tell wheter or not changing video direction influences the engagement.
+        </p>
+
+        <div class="text-center image">
+
+        </div>
+
+
+        </div>
 
 
 <!--        CONTENT END-->
@@ -640,6 +715,45 @@ Portfolio Modals
 </div>
 
 End Portfolio Modals -->
+
+<!-- REFERENCES -->
+<section class="page-section" id="references">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-dark">
+        <h4>References</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-10 mx-auto text-left">
+<!--        CONTENT START-->
+        <p class="small">
+            <!--[1]-->
+            <a href="https://techcrunch.com/2021/01/11/youtube-and-whatsapp-inch-closer-to-half-a-billion-users-in-india/" target="_blank">
+            <text class="reference" id="reference-1"> [1] https://techcrunch.com/2021/01/11/youtube-and-whatsapp-inch-closer-to-half-a-billion-users-in-india/</text>
+            </a>
+            <!--[2]-->
+            <br />
+            <a href="https://www.theverge.com/2017/2/27/14759102/youtube-billion-hours-watch-every-day" target="_blank">
+            <text class="reference" id="reference-2"> [2] https://www.theverge.com/2017/2/27/14759102/youtube-billion-hours-watch-every-day</text>
+            </a>
+            <br />
+            <!--[3]-->
+            <a href="https://techcrunch.com/2021/01/11/youtube-and-whatsapp-inch-closer-to-half-a-billion-users-in-india/" target="_blank">
+            <text class="reference" id="reference-3"> [3] https://techcrunch.com/2021/01/11/youtube-and-whatsapp-inch-closer-to-half-a-billion-users-in-india/</text>
+            </a>
+        </p>
+
+        https://www.theverge.com/2017/2/27/14759102/youtube-billion-hours-watch-every-day
+
+
+<!--        CONTENT END-->
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End REFERENCES -->
 
 <!-- About -->
   <section class="bg-light page-section" id="introduction">
