@@ -3,7 +3,15 @@
 @charset "utf-8";
 body { overflow-x: hidden; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
-p { line-height: 1.75; }
+text.to-do{
+    color: #A60901; //dark red
+}
+
+header.masthead p { line-height: 1.75;
+    text-align:center;}
+
+p { line-height: 1.75;
+text-align:justify;}
 
 a { color: #362a57;  font-weight: 600;}
 // Dark purple
@@ -38,15 +46,63 @@ text.reference{
 
 h1, h2, h3, h4, h5, h6 { font-weight: 700; font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
-//.page-section { padding-top: 50px; padding-bottom: 100px;}
+.page-section { padding-top: 0px; padding-bottom: 100px;}
 
-.page-section h2.section-heading { font-size: 40px; margin-top: 40px; margin-bottom: 50px; }
+.page-section h2.section-heading { font-size: 40px; padding-top: 40px; margin-bottom: 50px; }
+
+.yt-video{
+    padding-top:40px;
+    padding-bottom:40px;
+}
+
+.iframe-wrapper {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  margin-left:17.5%;
+  margin-right:17.5%;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    z-index: -1;
+    background: #000;
+    filter: blur(10px);
+    opacity: .75;
+  }
+
+  iframe {
+    position: absolute;
+    text-align:center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0% 0% 0% 0% round 10px);
+  }
+}
+
+.red-border {
+    border: 20px solid #c4302b;
+    border-radius: 10px;
+    padding: 0px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23), inset 0 0 0 5px black;
+    box-sizing: border-box;
+}
 
 h3.section-subheading {
     font-family: "Inter";
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 35px;
+    font-weight: 700;
     margin-top: 100px;
+    margin-bottom: 50px;
+    text-transform: none;}
+
+h4.section-subheading {
+    font-family: "Inter";
+    font-size: 25px;
+    font-weight: 700;
+    margin-top: 50px;
     margin-bottom: 50px;
     text-transform: none;}
 

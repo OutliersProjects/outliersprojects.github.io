@@ -106,7 +106,19 @@
 
         <div class="large text-dark">
       <p>
-            YouTube is the world's largest video hosting service. In the recent years, Youtube audience grew more than 10 times: from 200 millions in 2010 to 2.5 billions in 2021. Such platform with a large user base has the potential to shape public discourse and influence the way people think about certain issues. If it is perceived as biased, it may only amplify certain viewpoints and silence others, leading to a distorted public discourse. Political bias can contribute to the polarization of society, as people are exposed to more one-sided views and may be less likely to engage with viewpoints that differ from their own. Overall, it is important for platforms like YouTube to remain neutral and unbiased in order to maintain the trust and support of their users and avoid legal and reputational risks.
+            YouTube is the world's largest video hosting service. In the recent years, Youtube audience grew more than 10 times: from 200 millions in 2010 to 2.5 billions in 2021. Such platform with a large user base has the potential to shape public discourse and influence the way people think about certain issues. If it is perceived as biased, it may only amplify certain viewpoints and silence others, leading to a distorted public discourse. Political bias can contribute to the polarization of society, as people are exposed to more one-sided views and may be less likely to engage with viewpoints that differ from their own.
+      </p>
+
+      <div class="text-center">
+        <div class="yt-video text-center">
+            <div class="iframe-wrapper text-center">
+                <iframe class="text-center" width="1000px" height="500px" src="https://www.youtube.com/embed/LfymwMvzQ1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+      </div>
+
+            <p>
+            Overall, it is important for platforms like YouTube to remain neutral and unbiased in order to maintain the trust and support of their users and avoid legal and reputational risks.
             </p>
             <div class="col-lg-12 text-center image">
                 <img alt='social_media' class="text-center" src="assets/img/introduction/social_media.jpeg" width="45%"/>
@@ -143,32 +155,35 @@
 
         <div class="large text-dark">
             <p>
-            Thanks to YouNiverse ([link to paper and girhub repo]) dataset, we are able to analyze youtube content throughout the years.    Thanks to the rich database of 72.9 millions videos, 136 k channels  and 8.6 B comment metadata we perform a deep dive into the topic.
-
+            Thanks to <a href='https://github.com/epfl-dlab/YouNiverse' target="_blank">YouNiverse dataset</a>, we have access to youtube's content throughout the years. It contains a rich database of 72.9 millions videos, 136 thousands channels and 8.6 billions comment metadata we perform a deep dive into the topic.
+            </p>
+            <p>
+            Using many different data analysis techniques (like real Data Scientists!) and external datasets, we are diving deep into the political world of YouTube.
             </p>
         </div>
 
         <!--How do we assign a video to polytical spectrum?-->
-        <h3 class="section-subheading">How do we assign a video to polytical spectrum?</h3>
+        <h4 class="section-subheading text-left">Assigning a video to polytical spectrum.</h4>
 
         <div class="large text-dark">
             <p>
-            For political affiliation labelling we trained our political-flavoured BERT model on <a href='https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets'>Democrat Vs. Republican Tweets</a>. We again particularly used this dataset because we wanted our model to understand how people are expressing political ideas on social platforms.
+            For political affiliation labelling we trained our political-flavoured BERT model on <a href='https://www.kaggle.com/datasets/kapastor/democratvsrepublicantweets' target="_blank">Democrat Vs. Republican Tweets</a>. We again particularly used this dataset because we wanted our model to understand how people are expressing political ideas on social platforms.
 
             </p>
         </div>
 
         <!--How we do label videos with sentimental label?-->
-        <h3 class="section-subheading">How we do label videos with sentimental label?</h3>
+        <h4 class="section-subheading text-left">Performing sentimental analysis on videos</h4>
 
         <div class="large text-dark">
             <p>
-            We try to understand if one political affiliation is more prevalent than the other and also correlated with a higher engagement rate. We perform our analysis over time to see whether or not these trends are changing and if they reflect the US political reality. In order to  deepen our understanding about the political phenomenom, we use a sentiment analysis model to label the sentiment of a video, based again on text description and title. Our analysis is performed at video granularity and also channel granularity.
+            We try to understand if one political affiliation is more prevalent than the other and also correlated with a higher engagement rate. We perform our analysis over time to see whether or not these trends are changing and if they reflect the US political reality. In order to deepen our understanding about the political phenomenom, we use a sentiment analysis model to label the sentiment of a video using videos' description and title.
         </p>
         <p>
             In order to correctly label the setiment of each video we trained our political-flavoured BERT model on <a href='https://www.kaggle.com/datasets/cosmos98/twitter-and-reddit-sentimental-analysis-dataset'>Twitter and Reddit Sentimental analysis Dataset</a>. We particularly used this dataset since we wanted to capture how people are talking on social platforms.
-
             </p>
+
+        <text class="to-do">Maybe put some validation plot of the model (AUC curve) same as they did - teamnerf.github.io/ADA_Data_Story/</text>
         </div>
 
 
@@ -177,35 +192,22 @@
         <h3 class="section-subheading">Which videos we care about?</h3>
 
         <div class="large text-dark">
+            <text class="to-do">(pie plot of ratio of videos category in each category)</text>
+
+
             <p>
-            Youtube is a social media platform with over 72.9 million videos.
-            </p>
-
-            (pie plot of ratio of videos category in each category)
-
-            In order to analyze YouTube with regard to political spectrum we perform a filtering for videos that we care about.
-            <p>
-            We are keeping only videos that:
-
-            are from cateogry: News & Politics
-            are from channels that have category News & Politics
-            youtub videos from country US [reflink to additional dataset]
-            Since the discussion is relevant for the US population, we chose to only consider channels from US. In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id.
-
-            We found some inconsistencies among the categories for each channel, so we decided to retrieve this information from Youtube API. We filtred only channels from 'Politics' and 'Society', but our further analysis could focus on multiple categories.
-
+            In order to analyze YouTube with regard to political spectrum we perform a filtering for videos that we care about. Since the discussion is relevant for the US population, we chose to only consider channels from US and limit the videos to only these that they published. Furthermore, we filtred videos from 'News & Politics' category.
             </p>
             <p>
-            Since the discussion is relevant for the US population, we chose to only consider channels from US. In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id.
-
-We found some inconsistencies among the categories for each channel, so we decided to retrieve this information form Youtube API. We filtred only channels from 'Politics' and 'Society', but our further analysis could focus on multiple categories.
-
+            In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id. We found some inconsistencies among the categories for each channel, so we decided to retrieve this information from Youtube API.
             </p>
+
+            <text class="to-do">
+            (Do a plot with big numbers telling how much data we have left)
+            E.g. videos, comments, channels
+            </text>
+
         </div>
-
-
-
-
 
       </div>
     </div>
@@ -213,13 +215,40 @@ We found some inconsistencies among the categories for each channel, so we decid
 </section>
 <!-- End Introduction -->
 
-
-
-
 <!-- DATA ANALYSIS -->
-<section class="bg-light page-section" id="data-story">
+<section class="page-section" id="data-story">
   <div class="container">
     <div class="row">
+       <div class="bg-light col-lg-12 mx-auto">
+        <div class="bg-light col-lg-10 mx-auto">
+
+        <h3 class="section-subheading text-lg-center">How big is political scene on YouTube?</h3>
+
+
+        <text class="to-do">
+        <p>
+        1.
+        Two Pie plots next to each other:
+        <br />
+         - first with number of political videos on youtube to other categories (or ratios in total).
+         <br />
+         - second with number of youtube channels when it comes to its category (or ratios in total).
+        </p>
+
+        <p>
+        2. Timeseries of views under news politics video over (show that the views grew over time)
+        </p>
+
+        <p>
+        3. Timeseries of number of new videos each month
+        </p>
+
+        </text>
+
+        </div>
+       </div>
+      <div class="col-lg-12 mx-auto text-center">
+
       <div class="col-lg-10 mx-auto">
 <!--        CONTENT START-->
 
@@ -237,19 +266,23 @@ We found some inconsistencies among the categories for each channel, so we decid
         </div>
 
         <p>
-        We can see that there is a clear tendency towards more republican content posted each month.
+        From the above plot we cannot conclude that throughout the years there is a overwhealming difference in number of videos from both political spectrums. However, we can observe that there is a slight tendency towards more republican content posted each month.
         </p>
 
         <p>
 However, in terms of reach, the results are surprising. Democratic content is able to gather definitely more engagement after Trump announces his candidancy for US president elections in June 2015.
 
         </p>
-
-
-       <div class="text-center image">
-                <img alt='social_media' src="assets/img/datastory/1/timeseries_likes.png" width="85%"/>
-                <img alt='social_media' src="assets/img/datastory/1/timeseries_dislikes.png" width="85%"/>
+        <text class="to-do">1. Use the assigned political spectrum labels to videos to categorise channels. Are there channels that post only videos that were assigned with one political spectrum?</text>
+        </div>
+        </div>
+       <div class="col-lg-12 mx-auto text-center image">
+                <img alt='social_media' src="assets/img/datastory/1/timeseries_likes.jpg" width="48%"/>
+                <img alt='social_media' src="assets/img/datastory/1/timeseries_dislikes.jpg" width="48%"/>
        </div>
+
+       <div class="col-lg-10 mx-auto">
+        <div class="large text-dark">
 
         </div>
 
@@ -259,17 +292,34 @@ However, in terms of reach, the results are surprising. Democratic content is ab
         <h3 class="section-subheading text-lg-center">Do democrats and republicans live in partisan bubbles or is there any conversation between the two sides?</h3>
 
         <div class="large text-dark">
+        <!--Introduction TO TOPIC -->
 
         <p class="text-left">
-        For this, we want to see how users interract. Do they only comment on a single type of video, or do they try to have a conversation with the other party? Are democrats more likely to comment to republicans videos? We can inpher if a user is republican or democrat by analysing the majority of the videos he/she commented on.
+           In order to answer this question, we will analyze the how users interract through commented videos.
+           We will build an engagement graph that would join videos that were commented by the same user. Later we ran a The Louvain method for community detection to produce clusters of videos.
         </p>
 
-        <p class="text-left">
+        <h4 class="section-subheading text-left">Introduction on how graph was created</h4>
+        <p>
+
+        Bla bla bla graph... it's not relevant for the data story
+
+        </p>
+
+        <h4 class="section-subheading text-left">User interaction under videos from different political spectrum</h4>
+
+        <p>
+        Let's see the results of clustering. Do we get clusters with videos from ony one political spectrum, or does
+        users not necessairly comment under videos
+        Do they only comment on a single type of video, or do they try to have a conversation with the other party? Are democrats more likely to comment to republicans videos? We can inpher if a user is republican or democrat by analysing the majority of the videos he/she commented on.
+        </p>
+
+        <p>
         We can also try to cluster videos based on similiar topic and user engagement. We would connect the videos that were commented by the same user with a weight that would depend on whether or not the video was published by the same channel and the number of common commenters for both videos. In this way, we can see wheter or not videos form a community of similiar topics and engagement using community detection algorithms.
         </p>
 
         <div class="text-center image">
-
+            <img alt='social_media' src="assets/img/datastory/2/spectrum_ratio_plot.png" width="85%"/>
         </div>
 
         </div>
@@ -280,7 +330,7 @@ However, in terms of reach, the results are surprising. Democratic content is ab
 
         <div class="large text-dark">
 
-        <p class="text-left">
+        <p>
         In order to answer this question, we will use the channel timeseries to retrieve the information about a channel at a given point in time. We will match channels that have the same number of subscribers at a certain point in time and have the last 4 videos with the same political scores and sentiment scores. After matching, we can more reliably tell wheter or not changing video direction influences the engagement.
         </p>
 
@@ -294,7 +344,8 @@ However, in terms of reach, the results are surprising. Democratic content is ab
 
 <!--        CONTENT END-->
 
-      </div>
+        </div>
+        </div>
     </div>
   </div>
 </section>
