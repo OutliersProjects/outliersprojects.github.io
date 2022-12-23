@@ -110,9 +110,9 @@
       </p>
 
       <div class="text-center">
-        <div class="yt-video text-center">
+        <div class="yt-video">
             <div class="iframe-wrapper text-center">
-                <iframe class="text-center" width="1000px" height="500px" src="https://www.youtube.com/embed/LfymwMvzQ1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="1000px" height="500px" src="https://www.youtube.com/embed/LfymwMvzQ1g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
       </div>
@@ -126,9 +126,14 @@
             </div>
 
             <p>
-                YouTube is a popular and widely used platform with a significant user base. In 2021, YouTube had over 2 billion logged-in users per month<a href="#reference-1" class="js-scroll-trigger"><sup class="reference">[1]</sup></a>, making it one of the most visited websites in the world. In addition, the platform had over 1 billion hours of content watched per day<a href="#reference-2" class="js-scroll-trigger"><sup class="reference">[2]</sup></a> and was available in over 100 countries and in 80 languages. These statistics suggest that YouTube was a highly popular and influential platform at the time of my knowledge cutoff. It is possible that YouTube's popularity and user base have continued to grow since then.
+                YouTube is a popular and widely used platform with a significant user base. In 2021, YouTube had over 2 billion logged-in users per month<a href="#reference-1" class="js-scroll-trigger"><sup class="reference">[1]</sup></a>, making it one of the most visited websites in the world. In addition, the platform had over 1 billion hours of content watched per day<a href="#reference-2" class="js-scroll-trigger"><sup class="reference">[2]</sup></a> and was available in over 100 countries and in 80 languages. These statistics suggest that YouTube was a highly popular and influential platform.
 
             </p>
+
+            <div class="col-lg-12 text-center image">
+                <iframe width="1100" height="500" frameborder="0" scrolling="no" src="//plotly.com/~maximre/3.embed"></iframe>
+            </div>
+
 
     </div>
 
@@ -192,21 +197,12 @@
         <h3 class="section-subheading">Which videos we care about?</h3>
 
         <div class="large text-dark">
-            <text class="to-do">(pie plot of ratio of videos category in each category)</text>
-
-
             <p>
             In order to analyze YouTube with regard to political spectrum we perform a filtering for videos that we care about. Since the discussion is relevant for the US population, we chose to only consider channels from US and limit the videos to only these that they published. Furthermore, we filtred videos from 'News & Politics' category.
             </p>
             <p>
             In order to correctly identify the country of each channels, we used Youtube Data API to retrieve this additional information, based on channel id. We found some inconsistencies among the categories for each channel, so we decided to retrieve this information from Youtube API.
             </p>
-
-            <text class="to-do">
-            (Do a plot with big numbers telling how much data we have left)
-            E.g. videos, comments, channels
-            </text>
-
         </div>
 
       </div>
@@ -224,6 +220,10 @@
 
         <h3 class="section-subheading text-lg-center">How big is political scene on YouTube?</h3>
 
+
+        <div class="col-lg-12 text-center image">
+                <iframe width="600" height="500" frameborder="0" scrolling="no" src="//plotly.com/~bedkowskisite/1.embed"></iframe>
+            </div>
 
         <text class="to-do">
         <p>
@@ -313,6 +313,11 @@ However, in terms of reach, the results are surprising. Democratic content is ab
         users not necessairly comment under videos
         Do they only comment on a single type of video, or do they try to have a conversation with the other party? Are democrats more likely to comment to republicans videos? We can inpher if a user is republican or democrat by analysing the majority of the videos he/she commented on.
         </p>
+
+        <div class="text-center" id="scrollable">
+            <canvas id="glcanvas" tabindex="1" style="width:600px; height:600px;"></canvas>
+        </div>
+
 
         <p>
         We can also try to cluster videos based on similiar topic and user engagement. We would connect the videos that were commented by the same user with a weight that would depend on whether or not the video was published by the same channel and the number of common commenters for both videos. In this way, we can see wheter or not videos form a community of similiar topics and engagement using community detection algorithms.
@@ -1122,5 +1127,51 @@ End Portfolio Modals -->
 	  <!-- Custom scripts for this template -->
 	  <script src="assets/js/agency.min.js"></script>
 
+<!--      Disable scroll on graphs-->
+      <script>
+
+        document.querySelector('#scrollable').addEventListener('wheel', preventScroll, {passive: false});
+
+        function preventScroll(e){
+            e.preventDefault();
+            e.stopPropagation();
+
+            return false;
+        }
+
+        </script>
+
+
+<!--        Graph-->
+        <script type="text/javascript" src="js/patch.js" async></script>
+
+        <script>
+
+        // disable rubberband effect on mobile devices
+        document.getElementById('glcanvas').addEventListener('touchmove', (e)=>{ e.preventDefault(); }, false);
+
+
+        function patchInitialized(patch) {
+            // You can now access the patch object (patch), register variable watchers and so on
+        }
+
+        function patchFinishedLoading(patch) {
+            // The patch is ready now, all assets have been loaded
+        }
+
+        document.addEventListener('CABLES.jsLoaded', function (event) {
+            CABLES.patch = new CABLES.Patch({
+                patch: CABLES.exportedPatch,
+                "prefixAssetPath": "",
+                "assetPath": "assets/",
+                "jsPath": "js/",
+                "glCanvasId": "glcanvas",
+                "glCanvasResizeToWindow": false,
+                "onPatchLoaded": patchInitialized,
+                "onFinishedLoading": patchFinishedLoading,
+                "canvas":{"alpha":true,"premultipliedAlpha":true} // make canvas transparent
+            });
+        });
+    </script>
   </body>
 </html>
