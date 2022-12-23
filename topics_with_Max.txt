@@ -1,0 +1,17 @@
+cluster 0 contains mostly videos from democrats, and have topic about trump, if we got negative sentiments then we can conclude that this cluster contain videos that hate on trump
+
+
+7, 8, 9 - this contains mostly topics that are in the elction program of democrats and democrats
+
+republican - mostly talk about a single occuring event, scandals, smth that bring people
+
+demoicrats talk about social problems or general problems of America. Shooting, easy weapon access
+
+
+
+It is hard to validate the topic detection, because we don't have a ground thruth for videos. 
+
+
+Filter out the clusters with 100% spectrum score, they are misleading and contain small amount of videos inside of them
+
+
