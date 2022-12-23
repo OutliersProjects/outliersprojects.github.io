@@ -258,7 +258,7 @@
 
         <div class="large text-dark">
 
-        <p class="text-left">
+        <p>
         To investigate this, we tried to understand the distribution of republican and democratic content. We performed our analysis on video level and aggregated the results by month, in order to understand the trend revolution.
         </p>
         <div class="text-center image">
@@ -292,19 +292,62 @@ However, in terms of reach, the results are surprising. Democratic content is ab
         <h3 class="section-subheading text-lg-center">Do democrats and republicans live in partisan bubbles or is there any conversation between the two sides?</h3>
 
         <div class="large text-dark">
+
         <!--Introduction TO TOPIC -->
-
-        <p class="text-left">
-           In order to answer this question, we will analyze the how users interract through commented videos.
-           We will build an engagement graph that would join videos that were commented by the same user. Later we ran a The Louvain method for community detection to produce clusters of videos.
-        </p>
-
-        <h4 class="section-subheading text-left">Introduction on how graph was created</h4>
         <p>
+           In order to answer this question, we will analyze the how users interract through commented videos.
+</p>
 
-        Bla bla bla graph... it's not relevant for the data story
-
+<h4 class="section-subheading text-left">Engagement graph</h4>
+<p>
+We built an engagement graph that links videos that were commented by the same user. The weight between each pair of video indicates how many users commented under the same video. We observe dense regions in graph that indicate which content were engaged by users.
         </p>
+        <p>
+        We ran a community detection algoritmh based on The Louvain Method to produce clusters showing users engagement under videos. Let's use previously described video labels see how many videos related to each political spectrum are in each clusters.
+        </p>
+
+        <div class="text-center small-padding-t-b image">
+                <img alt='social_media' src="assets/img/datastory/2/piechart_clusters_spectrum.jpeg" width="65%"/>
+        </div>
+
+
+        <p>
+We can see that there are clusters that contain videos mostly related to a single political spectrum, and there are a few which seem to be be ballanced. This would suggest that there exist some borders between Republican and Democratic content when it comes to vides.
+        That's interesting...
+        </p>
+
+        <h4 class="section-subheading text-left">What are they talking about?</h4>
+
+        <p>
+        In order to get some sense of what clusters are about, we ran a LDA topic detection algorithm. It is an unsupervised algorithm that uses text to helps us produce most frequent terms that... thus producing a topic. We have found that using a video's description as a input to the model does not produce meaningful topics, because videos' description is often filled with hyperlinks or repeatable content. Thus we use video's title as a main source for extracting topics.
+        </p>
+
+        <p>
+        For each cluster we manually inspect produced terms and get sense of their most visible topics. The results are fascinating...
+        </p>
+
+        <h4 class="section-subheading text-left">Cluster 0 - Democrats about Trump</h4>
+
+        <p>
+        This cluster contains many terms connected to the persona of Donald Trump. Many of them are negative.
+        </p>
+
+        <div class="text-center small-padding-t-b image">
+                <img alt='social_media' src="assets/img/datastory/2/cluster_0_topics.png" width="45%"/>
+        </div>
+
+        <div class="text-center small-padding-t-b image">
+                <img alt='social_media' src="assets/img/datastory/2/trump_hate_timeline.png" width="85%"/>
+        </div>
+
+
+
+
+<!--                <div class="text-center" id="scrollable">-->
+<!--            <canvas id="glcanvas" tabindex="1" style="width:600px; height:600px;"></canvas>-->
+<!--        </div>-->
+
+
 
         <h4 class="section-subheading text-left">User interaction under videos from different political spectrum</h4>
 
@@ -313,10 +356,6 @@ However, in terms of reach, the results are surprising. Democratic content is ab
         users not necessairly comment under videos
         Do they only comment on a single type of video, or do they try to have a conversation with the other party? Are democrats more likely to comment to republicans videos? We can inpher if a user is republican or democrat by analysing the majority of the videos he/she commented on.
         </p>
-
-        <div class="text-center" id="scrollable">
-            <canvas id="glcanvas" tabindex="1" style="width:600px; height:600px;"></canvas>
-        </div>
 
 
         <p>
