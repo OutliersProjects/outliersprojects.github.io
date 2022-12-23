@@ -1,1 +1,2 @@
-### [OutlierTeam Datastory for ADA 2022 EPFL](!outliersprojects.github.io)
+OutlierTeam <a href="https://outliersprojects.github.io/" title="Learn Markdown">Datastory </a>, Applied Data Analysis class 2022 EPFL
+
