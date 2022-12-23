@@ -9024,10 +9024,11 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
  }
 
 div.image{
+    width:100%;
+    display:block;
     padding-top: 25px;
     padding-bottom: 25px;
 }
-
 
 div.small-padding-t-b{
     padding-top: 0px;
