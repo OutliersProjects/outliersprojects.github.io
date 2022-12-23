@@ -1,1 +1,1 @@
-### [!OutlierTeam Datastory for ADA 2022 EPFL](outliersprojects.github.io)
+### [OutlierTeam Datastory for ADA 2022 EPFL](outliersprojects.github.io)
